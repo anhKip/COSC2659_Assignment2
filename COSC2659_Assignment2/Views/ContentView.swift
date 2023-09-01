@@ -15,14 +15,14 @@ struct ContentView: View {
                 var game = Game()
                 for i in 0..<9 {
                     for j in 0..<9 {
-                        print(game.puzzle[i][j], terminator: " ")
+                        print(game.puzzle.mat[i][j], terminator: " ")
                     }
                     print()
                 }
                 print()
                 for i in 0..<9 {
                     for j in 0..<9 {
-                        print(game.solution[i][j], terminator: " ")
+                        print(game.solution.mat[i][j], terminator: " ")
                     }
                     print()
                 }
