@@ -3,17 +3,17 @@
 //  COSC2659_Assignment2
 //
 //  Created by Anh Tran Minh on 29/08/2023.
-//
+// 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
 
 import Foundation
 import SwiftUI
 
-struct Game: Identifiable {
+class Game: Identifiable {
     var id = UUID()
 //    var startTime: Timer
     
-    @State var puzzle = [[Int]] (repeating: [Int](repeating: 0, count: 9), count: 9)
-    @State var solution = [[Int]] (repeating: [Int](repeating: 0, count: 9), count: 9)
+    var puzzle = [[Int]] (repeating: [Int](repeating: 0, count: 9), count: 9)
+    var solution = [[Int]] (repeating: [Int](repeating: 0, count: 9), count: 9)
 //    var errorCount: Int
 //    var hintCount: Int
     
@@ -64,8 +64,8 @@ struct Game: Identifiable {
     
     func fillBox(row: Int, col: Int) {
         var num = 0
-        for i in 0...SRN {
-            for j in 0...SRN {
+        for i in 0..<SRN {
+            for j in 0..<SRN {
                 while true {
                     num = Int.random(in: 1...9)
                     if unUsedInBox(rowStart: row, colStart: col, num: num) {
@@ -82,7 +82,7 @@ struct Game: Identifiable {
         var j = col
         
         // Check if we have reached the end of the matrix
-        if i == 9 - 1 && j == 9 {
+        if i == 8 && j == 9 {
             return true
         }
         
@@ -94,11 +94,11 @@ struct Game: Identifiable {
         
         // Skip cells that are already filled
         if self.puzzle[i][j] != 0 {
-            return fillRemaining(row: i, col: j)
+            return fillRemaining(row: i, col: j+1)
         }
         
         // Fill current cell with valid value
-        for num in 1...(9+1) {
+        for num in 1...9 {
             if checkIfSafe(i: i, j: j, num: num) {
                 self.puzzle[i][j] = num
                 if fillRemaining(row: i, col: j+1) {
@@ -112,8 +112,8 @@ struct Game: Identifiable {
     }
     
     func unUsedInBox(rowStart: Int, colStart: Int, num: Int) -> Bool {
-        for i in 0...self.SRN {
-            for j in 0...self.SRN {
+        for i in 0..<self.SRN {
+            for j in 0..<self.SRN {
                 if self.puzzle[rowStart+i][colStart+j] == num {
                     return false
                 }
@@ -123,7 +123,7 @@ struct Game: Identifiable {
     }
     
     func unUsedInRow(i: Int, num: Int)-> Bool {
-        for j in 0...9 {
+        for j in 0..<9 {
             if self.puzzle[i][j] == num {
                 return false
             }
@@ -132,7 +132,7 @@ struct Game: Identifiable {
     }
     
     func unUsedInCol (j: Int, num: Int) -> Bool {
-        for i in 0...9 {
+        for i in 0..<9 {
             if self.puzzle[i][j] == num {
                 return false
             }

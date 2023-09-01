@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    init() {
-        var puzzle = Game()
-        for i in 0...9 {
-            for j in 0...9{
-                print(puzzle.puzzle[i][j], terminator: " ")
-            }
-            print()
-        }
-    }
+    
     var body: some View {
         MenuView()
+            .onAppear(perform: {
+                var game = Game()
+                for i in 0..<9 {
+                    for j in 0..<9 {
+                        print(game.puzzle[i][j], terminator: " ")
+                    }
+                    print()
+                }
+                print()
+                for i in 0..<9 {
+                    for j in 0..<9 {
+                        print(game.solution[i][j], terminator: " ")
+                    }
+                    print()
+                }
+            })
     }
 }
 

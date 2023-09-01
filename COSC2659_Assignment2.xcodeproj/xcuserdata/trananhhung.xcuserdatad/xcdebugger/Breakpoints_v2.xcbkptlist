@@ -23,16 +23,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0AF86690-A8C9-48C4-948F-58588C2C980B"
+            uuid = "260E53A8-BB44-43C7-BB12-43F5925514B1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COSC2659_Assignment2/Models/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "generatePuzzle()"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "fillRemaining(row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED740F5D-035D-4D11-8028-73B866839855"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "COSC2659_Assignment2/Models/Game.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "fillBox(row:col:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ED740F5D-035D-4D11-8028-73B866839855 - d47dc090d6714ea9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "COSC2659_Assignment2.Game.fillBox(row: Swift.Int, col: Swift.Int) -&gt; ()"
+                  moduleName = "COSC2659_Assignment2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trananhhung/Documents/Xcode/COSC2659_Assignment2/COSC2659_Assignment2/Models/Game.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "964">
+               </Location>
+               <Location
+                  uuid = "ED740F5D-035D-4D11-8028-73B866839855 - d47dc090d6714ea9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "COSC2659_Assignment2.Game.fillBox(row: Swift.Int, col: Swift.Int) -&gt; ()"
+                  moduleName = "COSC2659_Assignment2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trananhhung/Documents/Xcode/COSC2659_Assignment2/COSC2659_Assignment2/Models/Game.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "944">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "484B7314-D23B-4E63-ADCD-CEF73A25ABCA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "COSC2659_Assignment2/Views/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7606C074-9A9D-4349-B976-FACA9144A63B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "COSC2659_Assignment2/Models/Game.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "fillRemaining(row:col:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
