@@ -16,7 +16,6 @@
 		5D7D9BC02A9DC1B10029CDDE /* COSC2659_Assignment2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BBF2A9DC1B10029CDDE /* COSC2659_Assignment2UITestsLaunchTests.swift */; };
 		5D7D9BCF2A9DC41B0029CDDE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BCE2A9DC41B0029CDDE /* Player.swift */; };
 		5D7D9BD12A9DC45A0029CDDE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BD02A9DC45A0029CDDE /* Game.swift */; };
-		5D7D9BD52A9DC9840029CDDE /* Bite _ Bullet.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D7D9BD42A9DC9840029CDDE /* Bite _ Bullet.ttf */; };
 		5D7D9BD72A9DC9D40029CDDE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BD62A9DC9D40029CDDE /* MenuView.swift */; };
 		5D7D9BD92A9DCDC10029CDDE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BD82A9DCDC10029CDDE /* GameView.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +50,6 @@
 		5D7D9BBF2A9DC1B10029CDDE /* COSC2659_Assignment2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSC2659_Assignment2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5D7D9BCE2A9DC41B0029CDDE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5D7D9BD02A9DC45A0029CDDE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		5D7D9BD42A9DC9840029CDDE /* Bite _ Bullet.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bite _ Bullet.ttf"; path = "../../../../../../Downloads/bite-the-bullet/Bite _ Bullet.ttf"; sourceTree = "<group>"; };
 		5D7D9BD62A9DC9D40029CDDE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5D7D9BD82A9DCDC10029CDDE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,7 +167,6 @@
 		5D7D9BD32A9DC9680029CDDE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5D7D9BD42A9DC9840029CDDE /* Bite _ Bullet.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -279,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D7D9BAA2A9DC1B10029CDDE /* Preview Assets.xcassets in Resources */,
-				5D7D9BD52A9DC9840029CDDE /* Bite _ Bullet.ttf in Resources */,
 				5D7D9BA72A9DC1B10029CDDE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
