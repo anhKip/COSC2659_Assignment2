@@ -20,6 +20,11 @@
 		5D7D9BD92A9DCDC10029CDDE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BD82A9DCDC10029CDDE /* GameView.swift */; };
 		F9581B572AA1E79600ECDBD7 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9581B562AA1E79600ECDBD7 /* Puzzle.swift */; };
 		F9581B5A2AA2388600ECDBD7 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9581B592AA2388600ECDBD7 /* ButtonStyle.swift */; };
+		F9581B5D2AA31B0E00ECDBD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D7D9BA62A9DC1B10029CDDE /* Assets.xcassets */; };
+		F9581B5E2AA31B0F00ECDBD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D7D9BA62A9DC1B10029CDDE /* Assets.xcassets */; };
+		F9581B622AA331F400ECDBD7 /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9581B612AA331F400ECDBD7 /* Handlee-Regular.ttf */; };
+		F9581B652AA3367800ECDBD7 /* Itim-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9581B642AA3367800ECDBD7 /* Itim-Regular.ttf */; };
+		F9581B672AA378DE00ECDBD7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9581B662AA378DE00ECDBD7 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,10 @@
 		5D7D9BD82A9DCDC10029CDDE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		F9581B562AA1E79600ECDBD7 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		F9581B592AA2388600ECDBD7 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		F9581B612AA331F400ECDBD7 /* Handlee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Handlee-Regular.ttf"; sourceTree = "<group>"; };
+		F9581B632AA3325C00ECDBD7 /* COSC2659-Assignment2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "COSC2659-Assignment2-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F9581B642AA3367800ECDBD7 /* Itim-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Itim-Regular.ttf"; sourceTree = "<group>"; };
+		F9581B662AA378DE00ECDBD7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,7 @@
 		5D7D9BA12A9DC1AF0029CDDE /* COSC2659_Assignment2 */ = {
 			isa = PBXGroup;
 			children = (
+				F9581B632AA3325C00ECDBD7 /* COSC2659-Assignment2-Info.plist */,
 				F9581B582AA2385B00ECDBD7 /* Styles */,
 				5D7D9BD22A9DC7590029CDDE /* Assets */,
 				5D7D9BCD2A9DC3EF0029CDDE /* Views */,
@@ -173,6 +183,8 @@
 		5D7D9BD32A9DC9680029CDDE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F9581B642AA3367800ECDBD7 /* Itim-Regular.ttf */,
+				F9581B612AA331F400ECDBD7 /* Handlee-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -181,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				F9581B592AA2388600ECDBD7 /* ButtonStyle.swift */,
+				F9581B662AA378DE00ECDBD7 /* Font.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -290,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D7D9BAA2A9DC1B10029CDDE /* Preview Assets.xcassets in Resources */,
+				F9581B622AA331F400ECDBD7 /* Handlee-Regular.ttf in Resources */,
+				F9581B652AA3367800ECDBD7 /* Itim-Regular.ttf in Resources */,
 				5D7D9BA72A9DC1B10029CDDE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9581B5D2AA31B0E00ECDBD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9581B5E2AA31B0F00ECDBD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +337,7 @@
 				F9581B572AA1E79600ECDBD7 /* Puzzle.swift in Sources */,
 				5D7D9BA52A9DC1AF0029CDDE /* ContentView.swift in Sources */,
 				5D7D9BCF2A9DC41B0029CDDE /* Player.swift in Sources */,
+				F9581B672AA378DE00ECDBD7 /* Font.swift in Sources */,
 				5D7D9BA32A9DC1AF0029CDDE /* COSC2659_Assignment2App.swift in Sources */,
 				5D7D9BD92A9DCDC10029CDDE /* GameView.swift in Sources */,
 				5D7D9BD12A9DC45A0029CDDE /* Game.swift in Sources */,
@@ -483,6 +501,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"COSC2659_Assignment2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "COSC2659-Assignment2-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,6 +530,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"COSC2659_Assignment2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "COSC2659-Assignment2-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
