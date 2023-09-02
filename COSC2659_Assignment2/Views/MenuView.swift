@@ -16,6 +16,7 @@ struct MenuView: View {
                 Text("Resume game")
             }
             .padding(.bottom, 10)
+            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
             
             Button {
                 
@@ -23,13 +24,23 @@ struct MenuView: View {
                 Text("Start game")
             }
             .padding(.bottom, 10)
+            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
             
             Button {
                 
             } label: {
-                Text("Start game")
+                Text("Leaderboard")
             }
             .padding(.bottom, 10)
+            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+            
+            Button {
+                
+            } label: {
+                Text("Settings")
+            }
+            .padding(.bottom, 10)
+            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
         }
         
     }

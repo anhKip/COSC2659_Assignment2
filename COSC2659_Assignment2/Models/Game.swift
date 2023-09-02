@@ -15,15 +15,22 @@ class Game: Identifiable {
     var puzzle: Puzzle
     var solution: Puzzle
     
-//    var errorCount: Int
-//    var hintCount: Int
+    var errorCount: Int
+    var hintCount: Int
     
     init() {
-//        self.startTime = Timer()
+        // generate puzzle ...
         self.solution = Puzzle(N: 9)
         self.puzzle = Puzzle(N: 9)
         self.puzzle.mat = self.solution.mat
         puzzle.removeDigits(numDigits: 40)
+        
+        // initialize game-related variable
+        self.errorCount = 0
+        self.hintCount = 0
+        
+//        self.startTime = Timer()
+
     }
     
     

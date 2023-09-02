@@ -19,6 +19,7 @@
 		5D7D9BD72A9DC9D40029CDDE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BD62A9DC9D40029CDDE /* MenuView.swift */; };
 		5D7D9BD92A9DCDC10029CDDE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D9BD82A9DCDC10029CDDE /* GameView.swift */; };
 		F9581B572AA1E79600ECDBD7 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9581B562AA1E79600ECDBD7 /* Puzzle.swift */; };
+		F9581B5A2AA2388600ECDBD7 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9581B592AA2388600ECDBD7 /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		5D7D9BD62A9DC9D40029CDDE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5D7D9BD82A9DCDC10029CDDE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		F9581B562AA1E79600ECDBD7 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		F9581B592AA2388600ECDBD7 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		5D7D9BA12A9DC1AF0029CDDE /* COSC2659_Assignment2 */ = {
 			isa = PBXGroup;
 			children = (
+				F9581B582AA2385B00ECDBD7 /* Styles */,
 				5D7D9BD22A9DC7590029CDDE /* Assets */,
 				5D7D9BCD2A9DC3EF0029CDDE /* Views */,
 				5D7D9BCC2A9DC3E50029CDDE /* Models */,
@@ -172,6 +175,14 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F9581B582AA2385B00ECDBD7 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F9581B592AA2388600ECDBD7 /* ButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D7D9BD72A9DC9D40029CDDE /* MenuView.swift in Sources */,
+				F9581B5A2AA2388600ECDBD7 /* ButtonStyle.swift in Sources */,
 				F9581B572AA1E79600ECDBD7 /* Puzzle.swift in Sources */,
 				5D7D9BA52A9DC1AF0029CDDE /* ContentView.swift in Sources */,
 				5D7D9BCF2A9DC41B0029CDDE /* Player.swift in Sources */,
