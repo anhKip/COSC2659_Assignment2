@@ -27,6 +27,7 @@ struct MenuView: View {
                         Text("Sudoku")
                             .font(MyFont.title)
                     }
+                    .foregroundColor(Colors.text)
                 }
                 .padding(.bottom, 50)
                 
@@ -45,7 +46,7 @@ struct MenuView: View {
                 })
                 .isDetailLink(false)
                 .padding(.bottom, 10)
-                .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+                .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
                 
                 Button {
                     
@@ -54,7 +55,7 @@ struct MenuView: View {
                         .font(MyFont.body)
                 }
                 .padding(.bottom, 10)
-                .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+                .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
                 
                 Button {
                     
@@ -63,7 +64,7 @@ struct MenuView: View {
                         .font(MyFont.body)
                 }
                 .padding(.bottom, 10)
-                .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+                .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
                 
                 Spacer()
             }

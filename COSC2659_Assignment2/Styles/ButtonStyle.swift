@@ -70,36 +70,3 @@ struct GradientStyle: ButtonStyle {
       .opacity(0.4)
     }
 }
-
-/*
-Certainly! Here's an example of a custom ButtonStyle for a Sudoku game menu using SwiftUI:
-
-```swift
-struct SudokuButtonStyle: ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .frame(maxWidth: .infinity)
-            .padding(10)
-            .background(configuration.isPressed ? Color.gray.opacity(0.7) : Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            .font(.headline)
-    }
-}
-```
-
-With this custom ButtonStyle, the buttons in your Sudoku game menu will have a blue background and white text. When a button is pressed, its background color will change to a slightly transparent gray color.
-
-To apply this style to a button, you can use the `.buttonStyle(SudokuButtonStyle())` modifier:
-
-```swift
-Button(action: {
-    // Handle button tap here
-}) {
-    Text("Play")
-}
-.buttonStyle(SudokuButtonStyle())
-```
-
-You can customize the colors, font, and padding as per your requirements. Hope this helps you create a beautiful Sudoku game menu in SwiftUI!
-*/

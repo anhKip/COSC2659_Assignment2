@@ -29,6 +29,7 @@ struct GameView: View {
                         .font(MyFont.body)
                 }
                 .padding(.horizontal, 15)
+                .foregroundColor(Colors.primary)
                 
                 Spacer()
                 
@@ -39,11 +40,12 @@ struct GameView: View {
                         .font(.system(size: 22))
                 }
                 .padding(.horizontal, 15)
+                .foregroundColor(Colors.primary)
             }
             .padding(.bottom, 10)
             
             // ------------------ SUDOKU  ------------------------
-            
+            GridView(grid: currentGame.puzzle.mat)
             
             Spacer()
         }
