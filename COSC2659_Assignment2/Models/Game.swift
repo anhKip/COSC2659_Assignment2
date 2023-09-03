@@ -12,18 +12,17 @@ class Game: Identifiable {
     var id = UUID()
 //    var startTime: Timer
     
-    var puzzle: Puzzle
-    var solution: Puzzle
+    @Published var puzzle: Puzzle
+    @Published var solution: Puzzle
+    var difficulty: Difficulty
     
     var errorCount: Int
     var hintCount: Int
     
-    init() {
-        // generate puzzle ...
-        self.solution = Puzzle(N: 9)
+    init(difficulty: Difficulty) {
+        self.difficulty = difficulty
         self.puzzle = Puzzle(N: 9)
-        self.puzzle.mat = self.solution.mat
-        puzzle.removeDigits(numDigits: 40)
+        self.solution = Puzzle(N: 9)
         
         // initialize game-related variable
         self.errorCount = 0

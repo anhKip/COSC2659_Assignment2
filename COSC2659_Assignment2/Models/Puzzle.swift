@@ -19,11 +19,13 @@ class Puzzle: Identifiable {
         self.SRNd = sqrt(Double(N))
         self.SRN = Int(SRNd)
         self.N = N
-                
-        generateMat()
     }
     
-    private func generateMat() {
+    // ------------------------- RENDERING ----------------------------
+
+    
+    // ------------------------- GENERATING ----------------------------
+    func generateMat() {
         fillDiagonal()
         fillRemaining(row: 0, col: self.SRN)
     }
@@ -31,7 +33,20 @@ class Puzzle: Identifiable {
     /// Remove a number of digits from the mat
     /// - Parameters:
     ///     - numDigits: The number of digits to be removed
-    func removeDigits(numDigits: Int) {
+    func removeDigits(difficulty: Difficulty) {
+        var numDigits: Int
+        switch(difficulty) {
+        case .easy:
+            numDigits = Int.random(in: 40...50)
+            break
+        case .medium:
+            numDigits = Int.random(in: 50...60)
+            break
+        case .hard:
+            numDigits = Int.random(in: 60...70)
+            break
+        }
+        
         var count = numDigits
         var i: Int, j: Int;
         
