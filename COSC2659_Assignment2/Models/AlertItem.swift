@@ -5,15 +5,18 @@
     Assessment: Assignment 2
     Author: Tran Minh Anh
     ID: S3931980
-    Created date: 27/08/2023
+    Created date: 31/08/2023
     Last modified:
     Acknowledgement:
+    https://github.com/rckim77/Sudoku
  */
 
 import Foundation
 
-enum Difficulty {
-    case easy,
-    medium,
-    hard
+struct AlertItem: Identifiable {
+    let id: AlertItemType
+    
+    enum AlertItemType {
+        case finished, finishedIncorrectly
+    }
 }

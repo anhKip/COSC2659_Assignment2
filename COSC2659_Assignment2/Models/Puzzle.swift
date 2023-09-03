@@ -1,9 +1,15 @@
-//
-//  mat.swift
-//  COSC2659_Assignment2
-//
-//  Created by Tran Anh Hung on 01/09/2023.
-//
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Minh Anh
+    ID: S3931980
+    Created date: 29/08/2023
+    Last modified:
+    Acknowledgement:
+    https://www.geeksforgeeks.org/program-sudoku-generator/
+ */
 
 import Foundation
 import SwiftUI

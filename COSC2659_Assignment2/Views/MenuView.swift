@@ -1,9 +1,14 @@
-//
-//  MenuView.swift
-//  COSC2659_Assignment2
-//
-//  Created by Anh Tran Minh on 29/08/2023.
-//
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Minh Anh
+    ID: S3931980
+    Created date: 25/08/2023
+    Last modified:
+    Acknowledgement:
+ */
 
 import SwiftUI
 

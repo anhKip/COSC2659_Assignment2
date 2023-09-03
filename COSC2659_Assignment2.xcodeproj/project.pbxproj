@@ -31,6 +31,7 @@
 		F95E4C472AA490DC0018A4AE /* SelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C462AA490DC0018A4AE /* SelectedCell.swift */; };
 		F95E4C492AA491000018A4AE /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C482AA491000018A4AE /* Coordinate.swift */; };
 		F95E4C4D2AA4C43F0018A4AE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C4C2AA4C43F0018A4AE /* Constant.swift */; };
+		F95E4C512AA4EE900018A4AE /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C502AA4EE900018A4AE /* AlertItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		F95E4C462AA490DC0018A4AE /* SelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCell.swift; sourceTree = "<group>"; };
 		F95E4C482AA491000018A4AE /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		F95E4C4C2AA4C43F0018A4AE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F95E4C502AA4EE900018A4AE /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				F95E4C4C2AA4C43F0018A4AE /* Constant.swift */,
+				F95E4C502AA4EE900018A4AE /* AlertItem.swift */,
 				5D7D9BCE2A9DC41B0029CDDE /* Player.swift */,
 				5D7D9BD02A9DC45A0029CDDE /* Game.swift */,
 				F9581B562AA1E79600ECDBD7 /* Puzzle.swift */,
@@ -351,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F95E4C472AA490DC0018A4AE /* SelectedCell.swift in Sources */,
+				F95E4C512AA4EE900018A4AE /* AlertItem.swift in Sources */,
 				5D7D9BD72A9DC9D40029CDDE /* MenuView.swift in Sources */,
 				F95E4C4D2AA4C43F0018A4AE /* Constant.swift in Sources */,
 				F9581B5A2AA2388600ECDBD7 /* ButtonStyle.swift in Sources */,
