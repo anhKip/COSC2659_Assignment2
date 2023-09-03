@@ -14,6 +14,7 @@ struct MenuView: View {
         NavigationView {
             VStack {
                 Spacer()
+                    .frame(height: Screen.height/4)
                 
                 HStack {
                     Image(systemName: "grid")
