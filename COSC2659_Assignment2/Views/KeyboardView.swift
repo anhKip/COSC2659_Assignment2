@@ -101,7 +101,7 @@ struct KeyboardView: View {
         self.currentGame.updatePlayerGrid(value: digit, at: coor)
         
         // Verify guess
-        if currentGame.solution.mat[coor.r][coor.c] != digit { // wrong input
+        if currentGame.originalPuzzle.mat[coor.r][coor.c] == 0 && currentGame.solution.mat[coor.r][coor.c] != digit { // wrong input
             self.currentGame.errorCount += 1
         }
         

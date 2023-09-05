@@ -41,17 +41,18 @@ class Game: Identifiable, ObservableObject{
     }
     
     // ------------------------- HELPER ----------------------------
+    /// Update player's grid
+    /// - Parameter value: digit to be added to grid
+    /// - Parameter coordinate: coordinate of the digit in the grid
     func updatePlayerGrid(value: Int, at coordinate: Coordinate) {
         // This is default digit
         if self.originalPuzzle.mat[coordinate.r][coordinate.c] != 0 {
-            print("In updatePlayerGrid, this is a default cell")
             return
         } else {
             if self.solution.mat[coordinate.r][coordinate.c] == value {
                 
             }
             self.puzzle.mat[coordinate.r][coordinate.c] = value
-            print("In updatePlayerGrid, value has been changed to \(value) at cell [\(coordinate.r), \(coordinate.c)]")
         }
     }
     

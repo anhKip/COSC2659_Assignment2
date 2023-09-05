@@ -57,6 +57,14 @@ struct GameView: View {
                 GridView()
                     .padding(.bottom, 20)
                 
+                HStack {
+                    Spacer()
+                    Text("Errors: \(currentGame.errorCount)")
+                        .font(MyFont.body)
+                        .foregroundColor(Colors.text)
+                        .padding(.trailing, 15)
+                }
+                
                 Spacer()
                 
                 KeyboardView(alert: $alertItem, selectedCellCoor: selectedCell.coordinate)

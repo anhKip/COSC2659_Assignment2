@@ -74,6 +74,7 @@ struct GridView: View {
         }
     }
     
+    /// Get value of cell from grid to be displayed
     private func renderCell(columnIndex: Int, rowIndex: Int, squareIndex: Int) -> AnyView {
         let coor = self.currentGame.puzzle.getCoor(colIndex: columnIndex, rowIndex: rowIndex, squareIndex: squareIndex)
         
@@ -96,6 +97,10 @@ struct GridView: View {
         userAction.action = .none
     }
     
+    /// Get foreground color for each cell
+    /// Return red if digit is incorrect
+    /// Return secondary if it is a digit player input
+    /// Return text color if it is a generated digit
     private func getForegroundColor(columnIndex: Int, rowIndex: Int, squareIndex: Int) -> Color {
         let coor = currentGame.puzzle.getCoor(colIndex: columnIndex, rowIndex: rowIndex, squareIndex: squareIndex)
         
