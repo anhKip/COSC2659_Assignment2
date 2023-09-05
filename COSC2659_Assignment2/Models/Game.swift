@@ -1,29 +1,36 @@
-//
-//  Game.swift
-//  COSC2659_Assignment2
-//
-//  Created by Anh Tran Minh on 29/08/2023.
-// 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
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Minh Anh
+    ID: S3931980
+    Created date: 27/08/2023
+    Last modified:
+    Acknowledgement:
+    https://developer.apple.com/forums/thread/127572
+ */
 
 import Foundation
 import SwiftUI
 
-class Game: Identifiable {
+class Game: Identifiable, ObservableObject{
     var id = UUID()
 //    var startTime: Timer
     
-    var puzzle: Puzzle
-    var solution: Puzzle
+    @Published var puzzle: Puzzle
+    @Published var solution: Puzzle
+    var originalPuzzle: Puzzle
+    var difficulty: Difficulty
     
     var errorCount: Int
     var hintCount: Int
     
-    init() {
-        // generate puzzle ...
-        self.solution = Puzzle(N: 9)
+    init(difficulty: Difficulty) {
+        self.difficulty = difficulty
         self.puzzle = Puzzle(N: 9)
-        self.puzzle.mat = self.solution.mat
-        puzzle.removeDigits(numDigits: 40)
+        self.solution = Puzzle(N: 9)
+        self.originalPuzzle = Puzzle(N: 9)
         
         // initialize game-related variable
         self.errorCount = 0
@@ -33,6 +40,20 @@ class Game: Identifiable {
 
     }
     
-    
+    // ------------------------- HELPER ----------------------------
+    /// Update player's grid
+    /// - Parameter value: digit to be added to grid
+    /// - Parameter coordinate: coordinate of the digit in the grid
+    func updatePlayerGrid(value: Int, at coordinate: Coordinate) {
+        // This is default digit
+        if self.originalPuzzle.mat[coordinate.r][coordinate.c] != 0 {
+            return
+        } else {
+            if self.solution.mat[coordinate.r][coordinate.c] == value {
+                
+            }
+            self.puzzle.mat[coordinate.r][coordinate.c] = value
+        }
+    }
     
 }

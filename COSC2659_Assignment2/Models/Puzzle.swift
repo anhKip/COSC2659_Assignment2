@@ -1,9 +1,15 @@
-//
-//  mat.swift
-//  COSC2659_Assignment2
-//
-//  Created by Tran Anh Hung on 01/09/2023.
-//
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Minh Anh
+    ID: S3931980
+    Created date: 29/08/2023
+    Last modified:
+    Acknowledgement:
+    https://www.geeksforgeeks.org/program-sudoku-generator/
+ */
 
 import Foundation
 import SwiftUI
@@ -19,11 +25,50 @@ class Puzzle: Identifiable {
         self.SRNd = sqrt(Double(N))
         self.SRN = Int(SRNd)
         self.N = N
-                
-        generateMat()
     }
     
-    private func generateMat() {
+    // ------------------------- HELPER ----------------------------
+    func getCoor(colIndex: Int, rowIndex: Int, squareIndex: Int) -> Coordinate {
+        var row = rowIndex, col = colIndex
+        
+        switch squareIndex {
+        case 1:
+            col += 3*1
+            break
+        case 2:
+            col += 3*2
+            break
+        case 3:
+            row += 3*1
+            break
+        case 4:
+            col += 3*1
+            row += 3*1
+            break
+        case 5:
+            col += 3*2
+            row += 3*1
+            break
+        case 6:
+            row += 3*2
+            break
+        case 7:
+            col += 3*1
+            row += 3*2
+            break
+        case 8:
+            col += 3*2
+            row += 3*2
+            break
+        default:
+            break
+        }
+        
+        return Coordinate(r: row, c: col, s: squareIndex)
+    }
+    
+    // ------------------------- GENERATING ----------------------------
+    func generateMat() {
         fillDiagonal()
         fillRemaining(row: 0, col: self.SRN)
     }
@@ -31,7 +76,20 @@ class Puzzle: Identifiable {
     /// Remove a number of digits from the mat
     /// - Parameters:
     ///     - numDigits: The number of digits to be removed
-    func removeDigits(numDigits: Int) {
+    func removeDigits(difficulty: Difficulty) {
+        var numDigits: Int
+        switch(difficulty) {
+        case .easy:
+            numDigits = Int.random(in: 35...45)
+            break
+        case .medium:
+            numDigits = Int.random(in: 45...55)
+            break
+        case .hard:
+            numDigits = Int.random(in: 55...65)
+            break
+        }
+        
         var count = numDigits
         var i: Int, j: Int;
         
@@ -68,7 +126,7 @@ class Puzzle: Identifiable {
         }
     }
     
-    private func fillRemaining(row: Int, col: Int) -> Bool {
+    @discardableResult private func fillRemaining(row: Int, col: Int) -> Bool {
         var i = row
         var j = col
         

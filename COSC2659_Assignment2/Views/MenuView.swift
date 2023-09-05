@@ -1,48 +1,80 @@
-//
-//  MenuView.swift
-//  COSC2659_Assignment2
-//
-//  Created by Anh Tran Minh on 29/08/2023.
-//
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Minh Anh
+    ID: S3931980
+    Created date: 25/08/2023
+    Last modified:
+    Acknowledgement:
+ */
 
 import SwiftUI
 
 struct MenuView: View {
+    @State var isActive: Bool = false
+    
     var body: some View {
-        VStack {
-            Button {
+        NavigationView {
+            VStack {
+                Spacer()
+                    .frame(height: Screen.height/4)
                 
-            } label: {
-                Text("Resume game")
-            }
-            .padding(.bottom, 10)
-            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
-            
-            Button {
+                HStack {
+                    Image(systemName: "grid")
+                        .foregroundStyle(Gradient(colors: [.teal, .indigo]))
+                        .font(.system(size: 45).weight(.bold))
+                    
+                    VStack (alignment: .leading) {
+                        Text("Simple")
+                            .font(MyFont.title)
+                        
+                        Text("Sudoku")
+                            .font(MyFont.title)
+                    }
+                    .foregroundColor(Colors.text)
+                }
+                .padding(.bottom, 50)
                 
-            } label: {
-                Text("Start game")
-            }
-            .padding(.bottom, 10)
-            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
-            
-            Button {
+                //            Button {
+                //
+                //            } label: {
+                //                Text("Resume game")
+                //                    .font(MyFont.body)
+                //            }
+                //            .padding(.bottom, 10)
+                //            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
                 
-            } label: {
-                Text("Leaderboard")
-            }
-            .padding(.bottom, 10)
-            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
-            
-            Button {
+                NavigationLink(destination: DifficultyView(rootIsActive: self.$isActive).navigationBarBackButtonHidden(true), isActive: self.$isActive, label: {
+                    Text("Start game")
+                        .font(MyFont.body)
+                })
+                .isDetailLink(false)
+                .padding(.bottom, 10)
+                .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
                 
-            } label: {
-                Text("Settings")
+                Button {
+                    
+                } label: {
+                    Text("Leaderboard")
+                        .font(MyFont.body)
+                }
+                .padding(.bottom, 10)
+                .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
+                
+                Button {
+                    
+                } label: {
+                    Text("Settings")
+                        .font(MyFont.body)
+                }
+                .padding(.bottom, 10)
+                .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
+                
+                Spacer()
             }
-            .padding(.bottom, 10)
-            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
         }
-        
     }
 }
 

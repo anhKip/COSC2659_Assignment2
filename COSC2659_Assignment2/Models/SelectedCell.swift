@@ -5,17 +5,14 @@
     Assessment: Assignment 2
     Author: Tran Minh Anh
     ID: S3931980
-    Created date: 27/08/2023
+    Created date: 01/09/2023
     Last modified:
     Acknowledgement:
+    https://github.com/rckim77/Sudoku
  */
 
 import Foundation
-import SwiftUI
 
-struct Player: Identifiable {
-    var id = UUID()
-    var name: String
-    var currentGame: Game?
-    
+final class SelectedCell: ObservableObject {
+    @Published var coordinate: Coordinate?
 }

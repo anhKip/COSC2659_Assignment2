@@ -11,11 +11,9 @@
  */
 
 import Foundation
-import SwiftUI
 
-struct Player: Identifiable {
-    var id = UUID()
-    var name: String
-    var currentGame: Game?
-    
+enum Difficulty {
+    case easy,
+    medium,
+    hard
 }
