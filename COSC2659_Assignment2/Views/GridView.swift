@@ -17,7 +17,6 @@ struct GridView: View {
     @EnvironmentObject private var selectedCell : SelectedCell
     @EnvironmentObject private var userAction: UserAction
     @EnvironmentObject private var currentGame: Game
-    @EnvironmentObject private var inputStatus: InputStatus
     
     static var spacerWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -102,6 +101,8 @@ struct GridView: View {
         
         if currentGame.puzzle.mat[coor.r][coor.c] != currentGame.solution.mat[coor.r][coor.c] {
             return Color.red
+        } else if currentGame.originalPuzzle.mat[coor.r][coor.c] == 0 {
+            return Colors.secondary
         }
         return Colors.text
     }
@@ -134,6 +135,5 @@ struct GridView_Previews: PreviewProvider {
             .environmentObject(Game(difficulty: .easy))
             .environmentObject(SelectedCell())
             .environmentObject(UserAction())
-            .environmentObject(InputStatus())
     }
 }

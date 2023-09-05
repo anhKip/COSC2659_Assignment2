@@ -1,16 +1,16 @@
 /*
-    RMIT University Vietnam
-    Course: COSC2659 iOS Development
-    Semester: 2022B
-    Assessment: Assignment 2
-    Author: Tran Minh Anh
-    ID: S3931980
-    Created date: 27/08/2023
-    Last modified:
-    Acknowledgement:
-    https://developer.apple.com/forums/thread/701623
-    https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-environmentobject-property-wrapper
-    https://github.com/rckim77/Sudoku
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 2
+ Author: Tran Minh Anh
+ ID: S3931980
+ Created date: 27/08/2023
+ Last modified:
+ Acknowledgement:
+ https://developer.apple.com/forums/thread/701623
+ https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-environmentobject-property-wrapper
+ https://github.com/rckim77/Sudoku
  */
 
 import SwiftUI
@@ -20,7 +20,7 @@ struct GameView: View {
     @EnvironmentObject private var selectedCell : SelectedCell
     @EnvironmentObject private var userAction: UserAction
     @EnvironmentObject private var currentGame: Game
-    @EnvironmentObject private var inputStatus: InputStatus
+    @State private var alertItem: AlertItem?
     
     init(shouldPopToRootView: Binding<Bool>) {
         self._shouldPopToRootView = shouldPopToRootView
@@ -53,14 +53,30 @@ struct GameView: View {
             .padding(.bottom, 20)
             
             // ------------------ SUDOKU  ------------------------
-            GridView()
-                .padding(.bottom, 20)
-            
-            Spacer()
-            
-            KeyboardView(selectedCellCoor: selectedCell.coordinate)
-                .padding(.horizontal, 15)
-            Spacer()
+            VStack {
+                GridView()
+                    .padding(.bottom, 20)
+                
+                Spacer()
+                
+                KeyboardView(alert: $alertItem, selectedCellCoor: selectedCell.coordinate)
+                    .padding(.horizontal, 15)
+                Spacer()
+            }
+            .alert(item: $alertItem, content: { item in
+                switch item.id {
+                case .finished:
+                    return Alert(title: Text("Congratulations!"),
+                                 message: Text("You've completed the puzzle!"),
+                                 dismissButton: .default(Text("Go back"), action: {
+                        self.shouldPopToRootView = false
+                    }))
+                case .finishedIncorrectly:
+                    return Alert(title: Text("Almost!"),
+                                 message: Text("Sorry but that's not quite right."),
+                                 dismissButton: .default(Text("Dismiss")))
+                }
+            })
         }
         .onAppear {
             self.currentGame.puzzle.generateMat()
@@ -94,6 +110,5 @@ struct GameView_Previews: PreviewProvider {
             .environmentObject(Game(difficulty: .easy))
             .environmentObject(SelectedCell())
             .environmentObject(UserAction())
-            .environmentObject(InputStatus())
     }
 }

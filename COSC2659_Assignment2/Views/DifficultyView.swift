@@ -20,7 +20,7 @@ struct DifficultyView: View {
             NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive)
                 .navigationBarBackButtonHidden(true).environmentObject(Game(difficulty: .easy))
                 .environmentObject(SelectedCell())
-                .environmentObject(UserAction()).environmentObject(InputStatus()), label: {
+                .environmentObject(UserAction()), label: {
                     Text("Easy")
                 })
             .isDetailLink(false)
@@ -28,7 +28,7 @@ struct DifficultyView: View {
             .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
             
             NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive).navigationBarBackButtonHidden(true).environmentObject(Game(difficulty: .medium)).environmentObject(SelectedCell())
-                .environmentObject(UserAction()).environmentObject(InputStatus())) {
+                .environmentObject(UserAction())) {
                     Text("Medium")
                 }
                 .isDetailLink(false)
@@ -37,7 +37,7 @@ struct DifficultyView: View {
             
             NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive).navigationBarBackButtonHidden(true).environmentObject(Game(difficulty: .hard))
                 .environmentObject(SelectedCell())
-                .environmentObject(UserAction()).environmentObject(InputStatus())) {
+                .environmentObject(UserAction())) {
                     Text("Hard")
                 }
                 .isDetailLink(false)

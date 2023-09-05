@@ -15,7 +15,7 @@ import SwiftUI
 struct KeyboardView: View {
     @EnvironmentObject private var userAction : UserAction
     @EnvironmentObject private var currentGame: Game
-    @EnvironmentObject private var inputStatus: InputStatus
+    @Binding var alert: AlertItem?
     
     let selectedCellCoor: Coordinate?
     private var borderWidth: CGFloat {
@@ -93,7 +93,6 @@ struct KeyboardView: View {
         guard let digit = digit else {
             self.userAction.action = .erase
             self.currentGame.updatePlayerGrid(value: 0, at: coor)
-            self.inputStatus.wrongInput = false
             return
         }
         
@@ -103,19 +102,31 @@ struct KeyboardView: View {
         
         // Verify guess
         if currentGame.solution.mat[coor.r][coor.c] != digit { // wrong input
-            self.inputStatus.wrongInput = true
             self.currentGame.errorCount += 1
+        }
+        
+        var errorFlag = false
+        for i in 0..<9 {
+            for j in 0..<9 {
+                if currentGame.puzzle.mat[i][j] == 0 {
+                    return
+                } else if currentGame.puzzle.mat[i][j] != currentGame.solution.mat[i][j] {
+                    errorFlag = true
+                }
+            }
+        }
+        if errorFlag {
+            alert = AlertItem(id: .finishedIncorrectly)
         } else {
-            self.inputStatus.wrongInput = false
+            alert = AlertItem(id: .finished)
         }
     }
 }
 
 struct KeyboardView_Previews: PreviewProvider {
     static var previews: some View {
-        KeyboardView(selectedCellCoor: nil)
+        KeyboardView(alert: .constant(AlertItem(id: .finished)), selectedCellCoor: nil)
             .environmentObject(UserAction())
             .environmentObject(Game(difficulty: .easy))
-            .environmentObject(InputStatus())
     }
 }

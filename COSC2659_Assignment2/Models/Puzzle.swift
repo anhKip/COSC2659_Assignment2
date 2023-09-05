@@ -80,13 +80,13 @@ class Puzzle: Identifiable {
         var numDigits: Int
         switch(difficulty) {
         case .easy:
-            numDigits = Int.random(in: 40...50)
+            numDigits = Int.random(in: 35...45)
             break
         case .medium:
-            numDigits = Int.random(in: 50...60)
+            numDigits = Int.random(in: 45...55)
             break
         case .hard:
-            numDigits = Int.random(in: 60...70)
+            numDigits = Int.random(in: 55...65)
             break
         }
         
