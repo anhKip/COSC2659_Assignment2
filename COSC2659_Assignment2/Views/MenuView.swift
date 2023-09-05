@@ -46,7 +46,7 @@ struct MenuView: View {
                 //            .padding(.bottom, 10)
                 //            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
                 
-                NavigationLink(destination: DifficultyView(rootIsActive: self.$isActive).navigationBarBackButtonHidden(true),             isActive: self.$isActive, label: {
+                NavigationLink(destination: DifficultyView(rootIsActive: self.$isActive).navigationBarBackButtonHidden(true), isActive: self.$isActive, label: {
                     Text("Start game")
                         .font(MyFont.body)
                 })

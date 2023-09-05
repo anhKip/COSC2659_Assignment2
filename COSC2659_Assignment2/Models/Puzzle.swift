@@ -27,8 +27,45 @@ class Puzzle: Identifiable {
         self.N = N
     }
     
-    // ------------------------- RENDERING ----------------------------
-
+    // ------------------------- HELPER ----------------------------
+    func getCoor(colIndex: Int, rowIndex: Int, squareIndex: Int) -> Coordinate {
+        var row = rowIndex, col = colIndex
+        
+        switch squareIndex {
+        case 1:
+            col += 3*1
+            break
+        case 2:
+            col += 3*2
+            break
+        case 3:
+            row += 3*1
+            break
+        case 4:
+            col += 3*1
+            row += 3*1
+            break
+        case 5:
+            col += 3*2
+            row += 3*1
+            break
+        case 6:
+            row += 3*2
+            break
+        case 7:
+            col += 3*1
+            row += 3*2
+            break
+        case 8:
+            col += 3*2
+            row += 3*2
+            break
+        default:
+            break
+        }
+        
+        return Coordinate(r: row, c: col, s: squareIndex)
+    }
     
     // ------------------------- GENERATING ----------------------------
     func generateMat() {
@@ -89,7 +126,7 @@ class Puzzle: Identifiable {
         }
     }
     
-    private func fillRemaining(row: Int, col: Int) -> Bool {
+    @discardableResult private func fillRemaining(row: Int, col: Int) -> Bool {
         var i = row
         var j = col
         

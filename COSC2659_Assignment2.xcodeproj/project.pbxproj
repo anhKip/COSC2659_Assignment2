@@ -32,6 +32,9 @@
 		F95E4C492AA491000018A4AE /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C482AA491000018A4AE /* Coordinate.swift */; };
 		F95E4C4D2AA4C43F0018A4AE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C4C2AA4C43F0018A4AE /* Constant.swift */; };
 		F95E4C512AA4EE900018A4AE /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C502AA4EE900018A4AE /* AlertItem.swift */; };
+		F95E4C532AA4F5410018A4AE /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C522AA4F5410018A4AE /* KeyboardView.swift */; };
+		F95E4C552AA5ABB50018A4AE /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C542AA5ABB50018A4AE /* UserAction.swift */; };
+		F95E4C572AA5F1D70018A4AE /* InputStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E4C562AA5F1D70018A4AE /* InputStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		F95E4C482AA491000018A4AE /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		F95E4C4C2AA4C43F0018A4AE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F95E4C502AA4EE900018A4AE /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
+		F95E4C522AA4F5410018A4AE /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		F95E4C542AA5ABB50018A4AE /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
+		F95E4C562AA5F1D70018A4AE /* InputStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +179,11 @@
 				5D7D9BCE2A9DC41B0029CDDE /* Player.swift */,
 				5D7D9BD02A9DC45A0029CDDE /* Game.swift */,
 				F9581B562AA1E79600ECDBD7 /* Puzzle.swift */,
+				F95E4C562AA5F1D70018A4AE /* InputStatus.swift */,
 				F9581B682AA3A1E700ECDBD7 /* Difficulty.swift */,
 				F95E4C462AA490DC0018A4AE /* SelectedCell.swift */,
 				F95E4C482AA491000018A4AE /* Coordinate.swift */,
+				F95E4C542AA5ABB50018A4AE /* UserAction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 				5D7D9BD62A9DC9D40029CDDE /* MenuView.swift */,
 				F95E4C402AA43AD30018A4AE /* DifficultyView.swift */,
 				5D7D9BD82A9DCDC10029CDDE /* GameView.swift */,
+				F95E4C522AA4F5410018A4AE /* KeyboardView.swift */,
 				F9581B6A2AA3A42E00ECDBD7 /* GridView.swift */,
 			);
 			path = Views;
@@ -354,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F95E4C472AA490DC0018A4AE /* SelectedCell.swift in Sources */,
+				F95E4C572AA5F1D70018A4AE /* InputStatus.swift in Sources */,
 				F95E4C512AA4EE900018A4AE /* AlertItem.swift in Sources */,
 				5D7D9BD72A9DC9D40029CDDE /* MenuView.swift in Sources */,
 				F95E4C4D2AA4C43F0018A4AE /* Constant.swift in Sources */,
@@ -367,7 +377,9 @@
 				5D7D9BA32A9DC1AF0029CDDE /* COSC2659_Assignment2App.swift in Sources */,
 				F95E4C412AA43AD30018A4AE /* DifficultyView.swift in Sources */,
 				5D7D9BD92A9DCDC10029CDDE /* GameView.swift in Sources */,
+				F95E4C532AA4F5410018A4AE /* KeyboardView.swift in Sources */,
 				5D7D9BD12A9DC45A0029CDDE /* Game.swift in Sources */,
+				F95E4C552AA5ABB50018A4AE /* UserAction.swift in Sources */,
 				F95E4C492AA491000018A4AE /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

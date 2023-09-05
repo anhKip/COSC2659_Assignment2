@@ -8,20 +8,22 @@
     Created date: 27/08/2023
     Last modified:
     Acknowledgement:
+    https://developer.apple.com/forums/thread/701623
+    https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-environmentobject-property-wrapper
     https://github.com/rckim77/Sudoku
  */
 
 import SwiftUI
 
 struct GameView: View {
-    @Environment(\.dismiss) var dismiss
     @Binding var shouldPopToRootView: Bool
+    @EnvironmentObject private var selectedCell : SelectedCell
+    @EnvironmentObject private var userAction: UserAction
+    @EnvironmentObject private var currentGame: Game
+    @EnvironmentObject private var inputStatus: InputStatus
     
-    let currentGame: Game
-    
-    init(shouldPopToRootView: Binding<Bool>, currentGame: Game) {
+    init(shouldPopToRootView: Binding<Bool>) {
         self._shouldPopToRootView = shouldPopToRootView
-        self.currentGame = currentGame
     }
     
     var body: some View {
@@ -48,17 +50,23 @@ struct GameView: View {
                 .padding(.horizontal, 15)
                 .foregroundColor(Colors.primary)
             }
-            .padding(.bottom, 10)
+            .padding(.bottom, 20)
             
             // ------------------ SUDOKU  ------------------------
-            GridView(grid: currentGame.puzzle.mat)
+            GridView()
+                .padding(.bottom, 20)
             
+            Spacer()
+            
+            KeyboardView(selectedCellCoor: selectedCell.coordinate)
+                .padding(.horizontal, 15)
             Spacer()
         }
         .onAppear {
-            currentGame.puzzle.generateMat()
-            currentGame.solution.mat = currentGame.puzzle.mat
-            currentGame.puzzle.removeDigits(difficulty: currentGame.difficulty)
+            self.currentGame.puzzle.generateMat()
+            self.currentGame.solution.mat = currentGame.puzzle.mat
+            self.currentGame.puzzle.removeDigits(difficulty: currentGame.difficulty)
+            self.currentGame.originalPuzzle.mat = currentGame.puzzle.mat
             
             for i in 0..<9 {
                 for j in 0..<9 {
@@ -67,6 +75,14 @@ struct GameView: View {
                 print()
             }
         }
+        .onDisappear {
+            self.resetGrid()
+        }
+    }
+    
+    private func resetGrid() {
+        self.selectedCell.coordinate = nil
+        self.userAction.action = .none
     }
 }
 
@@ -74,6 +90,10 @@ struct GameView_Previews: PreviewProvider {
     @State static var shouldPop = false
     
     static var previews: some View {
-        GameView(shouldPopToRootView: $shouldPop, currentGame: Game(difficulty: .easy))
+        GameView(shouldPopToRootView: $shouldPop)
+            .environmentObject(Game(difficulty: .easy))
+            .environmentObject(SelectedCell())
+            .environmentObject(UserAction())
+            .environmentObject(InputStatus())
     }
 }

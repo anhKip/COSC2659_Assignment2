@@ -1,9 +1,14 @@
-//
-//  DifficultyView.swift
-//  COSC2659_Assignment2
-//
-//  Created by Tran Anh Hung on 03/09/2023.
-//
+/*
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 2
+ Author: Tran Minh Anh
+ ID: S3931980
+ Created date: 27/08/2023
+ Last modified:
+ Acknowledgement:
+ */
 
 import SwiftUI
 
@@ -12,27 +17,32 @@ struct DifficultyView: View {
     
     var body: some View {
         VStack {
-            NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive, currentGame: Game(difficulty: .easy))
-                .navigationBarBackButtonHidden(true), label: {
-                Text("Easy")
-            })
+            NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive)
+                .navigationBarBackButtonHidden(true).environmentObject(Game(difficulty: .easy))
+                .environmentObject(SelectedCell())
+                .environmentObject(UserAction()).environmentObject(InputStatus()), label: {
+                    Text("Easy")
+                })
             .isDetailLink(false)
             .padding(.bottom, 10)
             .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
             
-            NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive, currentGame: Game(difficulty: .medium)).navigationBarBackButtonHidden(true)) {
-                Text("Medium")
-            }
-            .isDetailLink(false)
-            .padding(.bottom, 10)
-            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+            NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive).navigationBarBackButtonHidden(true).environmentObject(Game(difficulty: .medium)).environmentObject(SelectedCell())
+                .environmentObject(UserAction()).environmentObject(InputStatus())) {
+                    Text("Medium")
+                }
+                .isDetailLink(false)
+                .padding(.bottom, 10)
+                .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
             
-            NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive, currentGame: Game(difficulty: .hard)).navigationBarBackButtonHidden(true)) {
-                Text("Hard")
-            }
-            .isDetailLink(false)
-            .padding(.bottom, 10)
-            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+            NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive).navigationBarBackButtonHidden(true).environmentObject(Game(difficulty: .hard))
+                .environmentObject(SelectedCell())
+                .environmentObject(UserAction()).environmentObject(InputStatus())) {
+                    Text("Hard")
+                }
+                .isDetailLink(false)
+                .padding(.bottom, 10)
+                .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
         }
     }
 }
