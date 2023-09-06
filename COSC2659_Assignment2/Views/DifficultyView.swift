@@ -17,6 +17,22 @@ struct DifficultyView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Button {
+                    rootIsActive.toggle()
+                } label: {
+                    Label("Back", systemImage: "chevron.backward")
+                        .font(MyFont.body)
+                }
+                .padding(.horizontal, 15)
+                .foregroundColor(Colors.primary)
+                
+                Spacer()
+            }
+            .padding(.bottom, 20)
+            
+            Spacer()
+            
             NavigationLink(destination: GameView(shouldPopToRootView: self.$rootIsActive)
                 .navigationBarBackButtonHidden(true).environmentObject(Game(difficulty: .easy))
                 .environmentObject(SelectedCell())
@@ -43,6 +59,8 @@ struct DifficultyView: View {
                 .isDetailLink(false)
                 .padding(.bottom, 10)
                 .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+            
+            Spacer()
         }
     }
 }

@@ -101,6 +101,7 @@ struct GameView: View {
         }
         .onDisappear {
             self.resetGrid()
+//            self.currentGame.writeJSON(to: "game")
         }
     }
     

@@ -19,12 +19,13 @@ class Puzzle: Identifiable {
     private var SRNd: Double
     private var SRN: Int
     var N: Int
-    var mat = [[Int]] (repeating: [Int](repeating: 0, count: 9), count: 9)
+    var mat: [[Int]]
     
     init(N: Int) {
         self.SRNd = sqrt(Double(N))
         self.SRN = Int(SRNd)
         self.N = N
+        self.mat = [[Int]] (repeating: [Int](repeating: 0, count: N), count: N)
     }
     
     // ------------------------- HELPER ----------------------------

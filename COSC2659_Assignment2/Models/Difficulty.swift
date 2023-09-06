@@ -12,7 +12,7 @@
 
 import Foundation
 
-enum Difficulty {
+enum Difficulty: Codable, Hashable {
     case easy,
     medium,
     hard

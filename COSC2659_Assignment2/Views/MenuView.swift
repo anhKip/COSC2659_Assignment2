@@ -1,19 +1,21 @@
 /*
-    RMIT University Vietnam
-    Course: COSC2659 iOS Development
-    Semester: 2022B
-    Assessment: Assignment 2
-    Author: Tran Minh Anh
-    ID: S3931980
-    Created date: 25/08/2023
-    Last modified:
-    Acknowledgement:
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 2
+ Author: Tran Minh Anh
+ ID: S3931980
+ Created date: 25/08/2023
+ Last modified:
+ Acknowledgement:
  */
 
 import SwiftUI
 
 struct MenuView: View {
     @State var isActive: Bool = false
+    @EnvironmentObject var currentGame: Game
+    @EnvironmentObject var highscores: HighscoreData
     
     var body: some View {
         NavigationView {
@@ -37,14 +39,16 @@ struct MenuView: View {
                 }
                 .padding(.bottom, 50)
                 
-                //            Button {
-                //
-                //            } label: {
-                //                Text("Resume game")
-                //                    .font(MyFont.body)
-                //            }
-                //            .padding(.bottom, 10)
-                //            .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+//                if self.currentGame.getData() {
+//                    Button {
+//                        
+//                    } label: {
+//                        Text("Resume game")
+//                            .font(MyFont.body)
+//                    }
+//                    .padding(.bottom, 10)
+//                    .buttonStyle(GradientStyle(colors: [.teal, .indigo, .indigo]))
+//                }
                 
                 NavigationLink(destination: DifficultyView(rootIsActive: self.$isActive).navigationBarBackButtonHidden(true), isActive: self.$isActive, label: {
                     Text("Start game")
@@ -54,12 +58,11 @@ struct MenuView: View {
                 .padding(.bottom, 10)
                 .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
                 
-                Button {
-                    
-                } label: {
+                NavigationLink(destination: LeaderboardView().navigationBarBackButtonHidden(true).environmentObject(HighscoreData()), label: {
                     Text("Leaderboard")
                         .font(MyFont.body)
-                }
+                })
+                .isDetailLink(false)
                 .padding(.bottom, 10)
                 .buttonStyle(GradientStyle(colors: [Colors.secondary, Colors.primary, Colors.primary]))
                 
@@ -81,5 +84,8 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView()
+            .environmentObject(Game(difficulty: .easy))
+            .environmentObject(HighscoreData())
+
     }
 }
